@@ -2,8 +2,39 @@
 <html>
 <head>
     <title>Hello world</title>
+    <style>
+	    ol {
+	    	overflow: hidden;
+	    }
+		ol li {
+			float: left;
+			display: inline-block;
+			margin: 0 10px;
+		}
+    </style>
 </head>
 <body data-portal-component-type="page">
+
+	<!-- Our menu -->
+	<header class="p_menu-main">
+		<nav role="navigation">
+			<ol class="main-nav visible-md-block visible-lg-block">
+				<li data-th-classappend="${(site._path == content._path ? 'page_item active' : 'page_item')}">
+					<a data-th-href="${portal.pageUrl({'_path=' + site._path})}" href="/">
+						Forside
+					</a>
+				</li>
+				<li data-th-each="menuItem : ${menuItems}"
+					data-th-class="${(menuItem._path == content._path ? 'page_item active' : 'page_item')}">
+					<a href="#"
+						data-th-href="${portal.pageUrl({'_path=' + menuItem._path})}"
+						data-th-text="${menuItem.data.menuName} ?: ${menuItem.displayName}">Page</a>
+				</li>
+			</ol>
+		</nav>
+	</header>
+
+
     <h1>Hello world</h1>
     <h2>Countries</h2>
     <ul>

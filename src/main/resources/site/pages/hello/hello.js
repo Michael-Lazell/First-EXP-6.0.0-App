@@ -8,6 +8,38 @@ var util = require('utilities'); // My own extension functions
 exports.get = function(req) {
     var model = {};
 
+    model.site = portal.getSite();
+
+    // START MENUITEM CODE
+    var subMenus = [];
+    var siteContent = model.site; // portal.getSite() needs to be called already
+
+    var children = contentSvc.getChildren({
+        key: siteContent._id,
+        count: 100
+    });
+
+    util.log(children);
+
+    children.contents.forEach( function(child) {
+        if (child.data) {
+        	if (child.data.menuItem) {
+	        	if (child.data.menuItem === true) {
+	            	subMenus.push(child);
+	            }
+            }
+        }
+    });
+
+    model.menuItems = subMenus;
+    // END MENUITEM CODE
+
+
+    model.content = portal.getContent();
+
+//    util.log(model.site);
+//    util.log(model.content);
+
     // Get all the country contents
     var result = contentSvc.query({
         start: 0,
@@ -46,4 +78,5 @@ exports.get = function(req) {
     return {
         body: body
     }
+
 };
