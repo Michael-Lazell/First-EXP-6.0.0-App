@@ -2,4 +2,12 @@
     <h3 data-th-text="${name}"></h3>
     <div data-th-if="${population}" data-th-text="'Population: ' + ${population}"></div>
     <div data-th-if="${description}" data-th-text="${description}"></div>
+
+    <p data-th-if="${data.eu == 'yes'}">
+    	<strong>Medlem i EU!</strong>
+	</p>
+
+    <article data-th-if="${data.html != ''}">
+    	<div data-th-utext="${data.html}" data-th-remove="tag" />
+	</article>
 </div>

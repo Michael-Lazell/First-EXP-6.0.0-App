@@ -8,7 +8,7 @@ exports.get = function(req) {
     // Get the country content and extract the needed data from the JSON
     var content = portal.getContent();
 
-    util.log(content);
+//    util.log(content);
 
     var name = content.displayName;
     var description = content.data.description;
@@ -18,7 +18,8 @@ exports.get = function(req) {
     var model = {
         name: name,
         description: description,
-        population: population
+        population: population,
+        data: content.data
     };
 
     // Specify the view file to use
