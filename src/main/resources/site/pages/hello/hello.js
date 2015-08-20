@@ -8,7 +8,6 @@ var util = require('utilities'); // My own extension functions
 exports.get = function(req) {
     var model = {};
 
-
     // Get all the country contents
     var result = contentSvc.query({
         start: 0,
@@ -21,8 +20,6 @@ exports.get = function(req) {
     var contents = result.contents;
     var countries = new Array();
 
-//	util.log(result);
-//	util.log(module.name);
 //	util.log(app.name);
 
     // Loop through the contents and extract the needed data
