@@ -1,0 +1,20 @@
+<part>
+  <display-name>News ticker</display-name>
+  <config>
+    <item-set name="news">
+      <label>News Items</label>
+      <items>
+        <input type="TextLine" name="title">
+          <label>Title</label>
+          <occurrences minimum="0" maximum="1"/>
+        </input>
+        <input type="TextArea" name="preface">
+          <label>Short description</label>
+          <occurrences minimum="0" maximum="1"/>
+        </input>
+      </items>
+      <immutable>false</immutable>
+      <occurrences minimum="0" maximum="0"/>
+    </item-set>
+  </config>
+</part>

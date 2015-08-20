@@ -1,0 +1,6 @@
+<div class="news-ticker">
+	<div class="ticker-item" data-th-each="ticker : ${config.news}">
+	    <h3 data-th-text="${ticker.title}"></h3>
+	    <p data-th-text="${ticker.preface}"></p>
+	</div>
+</div>
