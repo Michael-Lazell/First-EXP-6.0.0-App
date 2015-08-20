@@ -22,5 +22,12 @@
         <option value="no">No</option>
       </config>
     </input>
+    <!-- Our mixin -->
+    <field-set name="mixin-test">
+      <label>Menu item controls</label>
+      <items>
+        <inline mixin="menuitem"/> 
+      </items>
+    </field-set>
   </form>
 </content-type>
