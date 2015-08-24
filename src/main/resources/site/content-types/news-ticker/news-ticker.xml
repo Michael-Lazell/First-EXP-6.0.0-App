@@ -1,0 +1,10 @@
+<content-type>
+  <display-name>News item</display-name>
+  <super-type>base:unstructured</super-type>
+  <form>
+    <input type="TextArea" name="preface">
+      <label>Short description</label>
+      <occurrences minimum="0" maximum="1"/>
+    </input>
+  </form>
+</content-type>
