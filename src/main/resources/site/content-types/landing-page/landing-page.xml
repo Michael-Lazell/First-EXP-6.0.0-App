@@ -4,11 +4,5 @@
 	<super-type>base:structured</super-type>
 	<allow-child-content>true</allow-child-content>
 	<form>
-	    <field-set name="mixin-test">
-	      <label>Menu item controls</label>
-	      <items>
-	        <inline mixin="menuitem"/> 
-	      </items>
-	    </field-set>
 	</form>
 </content-type>
