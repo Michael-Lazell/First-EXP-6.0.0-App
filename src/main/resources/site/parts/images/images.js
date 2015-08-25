@@ -11,39 +11,23 @@ exports.get = function(req) {
 	// Find the current component from request
 	var component = portal.getComponent();
 
-	model.config = me.component.config;
+//	util.log(component);
 
-	var imageUrls = new Array();
-	var imageKeys = new Array();
+	var content = component.config;
+		
+	var imageUrl = null;
 
-	imageKeys = model.config.image ? UTIL.data.forceArray( model.config.image ) : null;
-
-	if (imageKeys) {
-		for (var i = 0; i < imageKeys.length; i++) {
-			if ( imageKeys[i] ) {
-
-				var images = {}; // Temp object used to store our two image sizes
-
-				images.src = execute('portal.imageUrl', {
-					id: imageKeys[i],
-					filter: "scaleBlock(440,440)",
-					format: 'jpg'
-				});
-
-				images.href = execute('portal.imageUrl', {
-					id: imageKeys[i],
-					filter: 'scalewidth(1024)',
-					format: 'jpg'
-				});
-
-				imageUrls.push(images);
-			}
-		}
+	// Get the true image URL (only the ID to it is stored in Enonic)
+	if ( content.image ) {
+		imageUrl = execute('portal.imageUrl', {
+			id: image.image,
+			quality: 90, // Default is 85
+			filter: "scalewidth(460)"
+		});
 	}
 
-	model.imagelist = imageUrls.length > 0 ? imageUrls : null;
-
-	util.log(result);
+	model.image = imageUrl;
+	model.header = content.data.header;
 
     // Specify the view file to use
     var view = resolve('images.html');
