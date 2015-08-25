@@ -26,7 +26,7 @@ exports.get = function(req) {
 
 				imageUrl = portal.imageUrl({
 					id: imageKeys[i],
-					scale: "block(440,440)",
+					scale: 'block(200,200)',
 					format: 'jpg'
 				});
 
@@ -37,7 +37,7 @@ exports.get = function(req) {
 
 	model.imagelist = imageUrls.length > 0 ? imageUrls : null;
 
-	util.log(result);
+//	util.log(model);
 
     // Specify the view file to use
     var view = resolve('images2.html');

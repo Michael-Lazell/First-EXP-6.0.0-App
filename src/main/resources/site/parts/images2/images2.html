@@ -1,9 +1,9 @@
 <div class="p_images">
 
+	<h2 data-th-if="${header}" data-th-text="${header}" />
+
 	<div data-th-each="image, iterationStatus : ${imagelist}" data-th-remove="tag">
-		<div class="item" data-th-classappend="${iterationStatus.count == 1 ? 'active' : ''}">
-			<img data-th-src="${image.src}" alt="Image" title="Image" />
-		</div>
+		<img data-th-src="${image}" alt="" data-th-alt-title="${'Images no# ' + iterationStatus.count}" />
 	</div>
 
 </div>
