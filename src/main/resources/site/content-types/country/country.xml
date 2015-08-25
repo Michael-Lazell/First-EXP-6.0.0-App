@@ -10,6 +10,7 @@
       <label>Population</label>
       <occurrences minimum="0" maximum="1"/>
     </input>
+    <!-- Try HTML and RadioButton -->
     <input type="HtmlArea" name="html">
       <label>Some html</label>
       <occurrences minimum="0" maximum="1"/>
