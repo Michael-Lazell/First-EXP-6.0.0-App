@@ -22,7 +22,7 @@ exports.get = function(req) {
 		imageUrl = portal.imageUrl({
 			id: content.image,
 			quality: 90, // Default is 85
-			scale: "width(460)"
+			scale: "block(200,200)"
 		});
 	}
 
