@@ -1,10 +1,8 @@
 <div class="p_images">
 
-	<div class="carousel-inner" role="listbox">
-		<div data-th-each="image, iterationStatus : ${imagelist}" data-th-remove="tag">
-			<div class="item" data-th-classappend="${iterationStatus.count == 1 ? 'active' : ''}">
-				<a href="#" data-th-href="${image.href}" class="magnifyme_gallery" data-th-class="${'magnifyme_gallery-' + html_id}"><img data-th-src="${image.src}" alt="Image" title="Image" /></a>
-			</div>
+	<div data-th-each="image, iterationStatus : ${imagelist}" data-th-remove="tag">
+		<div class="item" data-th-classappend="${iterationStatus.count == 1 ? 'active' : ''}">
+			<img data-th-src="${image.src}" alt="Image" title="Image" />
 		</div>
 	</div>
 
