@@ -46,7 +46,7 @@ exports.get = function(req) {
 	util.log(result);
 
     // Specify the view file to use
-    var view = resolve('images.html');
+    var view = resolve('images2.html');
 
     // Return the response object
     return {

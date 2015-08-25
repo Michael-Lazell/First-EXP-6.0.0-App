@@ -10,9 +10,7 @@
 				</input>
 				<input name="image" type="ImageSelector">
 					<label>Image</label>
-					<occurrences minimum="1" maximum="0"/>
-					<config><!-- Missing in the docs, but an empty <config> is needed to be able to even run this Part -->
-					</config>
+					<occurrences minimum="1" maximum="1"/>
 				</input>
 			</items>
 		</field-set>
