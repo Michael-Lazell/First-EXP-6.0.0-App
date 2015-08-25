@@ -4,6 +4,7 @@
 	<super-type>base:structured</super-type>
 	<allow-child-content>true</allow-child-content>
 	<form>
+		<!-- Add from Task -->
 	    <field-set name="mixin-test">
 	      <label>Menu item controls</label>
 	      <items>

@@ -8,3 +8,14 @@ exports.forceArray = function(data) {
     }
     return data;
 };
+
+/**
+ * Check if value is integer
+ * @param value
+ * @returns {boolean}
+ */
+exports.isInt = function(value) {
+    return !isNaN(value) &&
+        parseInt(Number(value)) == value &&
+        !isNaN(parseInt(value, 10));
+};
