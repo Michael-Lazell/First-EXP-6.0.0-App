@@ -8,9 +8,6 @@ exports.get = function(req) {
 
 	var model = {};
 
-	// Find the current component from request
-	var component = portal.getComponent();
-
 	var result = lib.getChildren({
 	    key: '/hello-world/newsticker',
 	    start: 0,
