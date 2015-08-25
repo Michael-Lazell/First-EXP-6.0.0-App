@@ -1,0 +1,20 @@
+<part-component>
+	<display-name>Images</display-name>
+	<config>
+		<field-set name="config">
+			<label>Try images</label>
+			<items>
+				<input name="heading" type="TextLine">
+					<label>Heading</label>
+					<occurrences minimum="1" maximum="1"/>
+				</input>
+				<input name="image" type="ImageSelector">
+					<label>Image</label>
+					<occurrences minimum="1" maximum="0"/>
+					<config><!-- Missing in the docs, but an empty <config> is needed to be able to even run this Part -->
+					</config>
+				</input>
+			</items>
+		</field-set>
+	</config>
+</part-component>
