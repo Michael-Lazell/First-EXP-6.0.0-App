@@ -17,7 +17,7 @@ exports.get = function(req) {
 
 	model.content = result;
 
-	util.log(result);
+//	util.log(result);
 
     // Specify the view file to use
     var view = resolve('news-ticker3.html');
