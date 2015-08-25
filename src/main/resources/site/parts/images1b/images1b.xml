@@ -1,5 +1,5 @@
 <part>
-	<display-name>Images</display-name>
+	<display-name>Images 1b</display-name>
 	<config>
 		<field-set name="config">
 			<label>Try images</label>
@@ -11,6 +11,8 @@
 				<input name="image" type="ImageSelector">
 					<label>Image</label>
 					<occurrences minimum="1" maximum="1"/>
+					<config>
+					</config>
 				</input>
 			</items>
 		</field-set>

@@ -1,4 +1,4 @@
-<part-component>
+<part>
 	<display-name>Images 2</display-name>
 	<config>
 		<field-set name="config">
@@ -15,4 +15,4 @@
 			</items>
 		</field-set>
 	</config>
-</part-component>
+</part>

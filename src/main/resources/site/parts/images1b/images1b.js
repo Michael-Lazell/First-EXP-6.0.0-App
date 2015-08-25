@@ -15,18 +15,22 @@ exports.get = function(req) {
 
 	var content = component.config;
 		
-	var imageID = null;
+	var imageUrl = null;
 
 	// Get the true image URL (only the ID to it is stored in Enonic)
 	if ( content.image ) {
-		imageID = content.image;
+		imageUrl = portal.imageUrl({
+			id: content.image,
+			quality: 90, // Default is 85
+			scale: "width(460)"
+		});
 	}
 
-	model.image = imageID;
+	model.image = imageUrl;
 	model.header = content.heading;
 
     // Specify the view file to use
-    var view = resolve('images.html');
+    var view = resolve('images1b.html');
 
     // Return the response object
     return {
