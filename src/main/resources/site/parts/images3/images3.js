@@ -11,12 +11,12 @@ exports.get = function(req) {
 	// Find the current component from request
 	var component = portal.getComponent();
 
-	model.config = me.component.config;
+	var config = component.config;
 
 	var imageUrls = new Array();
 	var imageKeys = new Array();
 
-	imageKeys = model.config.image ? UTIL.data.forceArray( model.config.image ) : null;
+	imageKeys = config.image ? util.forceArray( config.image ) : null;
 
 	if (imageKeys) {
 		for (var i = 0; i < imageKeys.length; i++) {
@@ -24,15 +24,15 @@ exports.get = function(req) {
 
 				var images = {}; // Temp object used to store our two image sizes
 
-				images.src = execute('portal.imageUrl', {
+				images.src = portal.imageUrl({
 					id: imageKeys[i],
-					filter: "scaleBlock(440,440)",
+					scale: 'block(200,200)',
 					format: 'jpg'
 				});
 
-				images.href = execute('portal.imageUrl', {
+				images.href = portal.imageUrl({
 					id: imageKeys[i],
-					filter: 'scalewidth(1024)',
+					scale: 'width(1024)',
 					format: 'jpg'
 				});
 
@@ -43,7 +43,7 @@ exports.get = function(req) {
 
 	model.imagelist = imageUrls.length > 0 ? imageUrls : null;
 
-	util.log(result);
+//	util.log(model);
 
     // Specify the view file to use
     var view = resolve('images3.html');
