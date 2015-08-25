@@ -8,7 +8,7 @@
 	    <field-set name="mixin-test">
 	      <label>Menu item controls</label>
 	      <items>
-	        <inline mixin="menuitem"/> 
+	        <inline mixin="menuitem"/>
 	      </items>
 	    </field-set>
 	</form>

@@ -3,7 +3,7 @@ var contentSvc = require('/lib/xp/content'); // Import the content service funct
 var portal = require('/lib/xp/portal'); // Import the portal functions
 
 var util = require('utilities'); // My own extension functions
-var menu = require('menu'); // My own extension functions
+var menu = require('menu');
 
 // Handle the GET request
 exports.get = function(req) {

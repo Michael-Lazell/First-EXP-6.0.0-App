@@ -1,14 +1,13 @@
 <mixin>
   <display-name>Menu</display-name><!-- Not displayed anywhere -->
   <items>
-    <input type="Checkbox" name="menuItem">
+    <input type="Checkbox" name="menu-item">
       <label>Show in menu?</label>
       <help-text>Check this to include this Page in the menu</help-text><!-- Not displayed anywhere -->
       <occurrences minimum="0" maximum="1"/>
     </input>
-    <input type="TextLine" name="menuName">
+    <input type="TextLine" name="menu-name">
       <label>Overwrite menu name</label>
-      <help-text>Name to be used in menu. Optional</help-text><!-- Not displayed anywhere -->
       <occurrences minimum="0" maximum="1"/>
     </input>
   </items>

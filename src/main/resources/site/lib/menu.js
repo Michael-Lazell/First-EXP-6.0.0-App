@@ -11,6 +11,8 @@ exports.getMenu = function (levels) {
     levels = (util.isInt(levels) ? levels : 1);
     var site = portal.getSite();
 
+    util.log(site);
+
     if (!site) {
         return [];
     }
@@ -59,13 +61,13 @@ function isMenuItem(content) {
     if (!extraData) {
         return false;
     }
-    var moduleNamePropertyName = module.name.replace(/\./g, '-');
+    var moduleNamePropertyName = app.name.replace(/\./g, '-');
     var extraDataModule = extraData[moduleNamePropertyName];
     if (!extraDataModule || !extraDataModule['menu-item']) {
         return false;
     }
     var menuItemMetadata = extraDataModule['menu-item'] || {};
-    var menuItemValue = menuItemMetadata['menuItem'];
+    var menuItemValue = menuItemMetadata['menu-name'];
 
     return menuItemValue;
 }
@@ -82,7 +84,7 @@ function menuItemToJson(content, levels) {
         subMenus = getSubMenus(content, levels);
     }
 
-    var moduleNamePropertyName = module.name.replace(/\./g, '-');
+    var moduleNamePropertyName = app.name.replace(/\./g, '-');
     var menuItem = content.x[moduleNamePropertyName]['menu-item'];
     return {
         displayName: content.displayName,
