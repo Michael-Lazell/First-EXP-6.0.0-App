@@ -14,15 +14,6 @@ exports.get = function(req) {
     //model.menuItems = lib.menu.getMenu(1);
     model.menuItems = UTIL.menu.get(2);
 
-    UTIL.log(model.menuItems);
-
-    var site = portal.getSite();
-    var children = contentSvc.getChildren({
-        key: site._id,
-        count: 100
-    });
-    UTIL.log(children);
-
     // START MENUITEM CODE
 /*
     var subMenus = [];
