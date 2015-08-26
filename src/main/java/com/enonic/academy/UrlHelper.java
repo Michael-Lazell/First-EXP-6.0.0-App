@@ -13,9 +13,12 @@ import java.net.URL;
 public class UrlHelper {
 
 	public String getUrlAsJSON(final String url) throws Exception {
-		byte[] bytes = Resources.toByteArray(new URL(url));
-		return new String(bytes,"UTF-8");
+		// Part 1
 //		new URL(url) // java.net.URL
 //		return "{\"a\":2}"; // " must be escaped
+
+		// Part 2
+		byte[] bytes = Resources.toByteArray(new URL(url));
+		return new String(bytes,"UTF-8");
 	}
 }
