@@ -1,5 +1,6 @@
 var portal = require('/lib/xp/portal'); // Import the portal functions
 var thymeleaf = require('/lib/xp/thymeleaf'); // Import the Thymeleaf rendering function
+var urlLib = require('/lib/training/url'); // Include my fancy lib
 
 // Handle the GET request
 exports.get = function(req) {
@@ -10,10 +11,13 @@ exports.get = function(req) {
     // Extract the main region which contains component parts
     var mainRegion = content.page.regions.main;
 
+    var myUrl = urlLib.getAsJSON('http://api.openweathermap.org/data/2.5/weather?q=London,uk');
+
     // Prepare the model that will be passed to the view
     var model = {
-        mainRegion: mainRegion
-    }
+        mainRegion: mainRegion,
+        json: myUrl
+    };
 
     // Specify the view file to use
     var view = resolve('hello-region.html');
@@ -24,5 +28,5 @@ exports.get = function(req) {
     // Return the response object
     return {
         body: body
-    }
+    };
 };
