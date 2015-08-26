@@ -5,11 +5,13 @@
 	<allow-child-content>true</allow-child-content>
 	<form>
 		<!-- Add from Task -->
+		<!--
 	    <field-set name="mixin-test">
 	      <label>Menu item controls</label>
 	      <items>
-	        <inline mixin="menuitem"/>
+	        <inline mixin="menu-item"/>
 	      </items>
 	    </field-set>
+		-->
 	</form>
 </content-type>

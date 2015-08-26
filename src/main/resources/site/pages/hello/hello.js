@@ -2,8 +2,8 @@ var thymeleaf = require('/lib/xp/thymeleaf'); // Import the thymeleaf render fun
 var contentSvc = require('/lib/xp/content'); // Import the content service functions
 var portal = require('/lib/xp/portal'); // Import the portal functions
 
-var util = require('/lib/utilities'); // My own extension functions
-var menu = require('menu');
+//var util = require('/lib/utilities'); // My own extension functions
+var UTIL = require('/lib/util/js/util.js'); // Included by gradle.build
 
 // Handle the GET request
 exports.get = function(req) {
@@ -11,7 +11,17 @@ exports.get = function(req) {
 
     model.site = portal.getSite();
 
-    model.menuItems = menu.getMenu(1);
+    //model.menuItems = lib.menu.getMenu(1);
+    model.menuItems = UTIL.menu.get(2);
+
+    UTIL.log(model.menuItems);
+
+    var site = portal.getSite();
+    var children = contentSvc.getChildren({
+        key: site._id,
+        count: 100
+    });
+    UTIL.log(children);
 
     // START MENUITEM CODE
 /*

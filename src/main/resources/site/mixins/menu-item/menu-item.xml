@@ -1,12 +1,12 @@
-<mixin>
+<mixin><!-- Folder name MUST be "menu-item" -->
   <display-name>Menu</display-name><!-- Not displayed anywhere -->
   <items>
-    <input type="Checkbox" name="menu-item"><!-- Name MUST be this, hard coded later -->
+    <input type="Checkbox" name="menuItem"><!-- Name MUST be this, hard coded later -->
       <label>Show in menu?</label>
       <help-text>Check this to include this Page in the menu</help-text><!-- Not displayed anywhere -->
       <occurrences minimum="0" maximum="1"/>
     </input>
-    <input type="TextLine" name="menu-name">
+    <input type="TextLine" name="menuName">
       <label>Overwrite menu name</label>
       <occurrences minimum="0" maximum="1"/>
     </input>
