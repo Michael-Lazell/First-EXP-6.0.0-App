@@ -2,7 +2,7 @@ var thymeleaf = require('/lib/xp/thymeleaf'); // Import the thymeleaf render fun
 var contentSvc = require('/lib/xp/content'); // Import the content service functions
 var portal = require('/lib/xp/portal'); // Import the portal functions
 
-var util = require('utilities'); // My own extension functions
+var util = require('/lib/utilities'); // My own extension functions
 var menu = require('menu');
 
 // Handle the GET request

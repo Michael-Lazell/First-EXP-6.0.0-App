@@ -1,6 +1,6 @@
 var portal = require('/lib/xp/portal');
 var contentSvc = require('/lib/xp/content');
-var util = require('utilities');
+var util = require('/lib/utilities');
 
 /**
  * Get menu tree

@@ -1,7 +1,7 @@
 var portal = require('/lib/xp/portal'); // Import the portal functions
 var thymeleaf = require('/lib/xp/thymeleaf'); // Import the Thymeleaf rendering function
 var lib = require('/lib/xp/content');
-var util = require('utilities'); // My own extension functions
+var util = require('/lib/utilities'); // My own extension functions
 
 // Handle the GET request
 exports.get = function(req) {
