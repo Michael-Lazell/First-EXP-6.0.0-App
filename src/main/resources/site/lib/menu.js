@@ -11,7 +11,7 @@ exports.getMenu = function (levels) {
     levels = (util.isInt(levels) ? levels : 1);
     var site = portal.getSite();
 
-    util.log(site);
+//    util.log(site);
 
     if (!site) {
         return [];
@@ -39,6 +39,8 @@ function getSubMenus(parentContent, levels) {
         count: 100
     });
 
+//    util.log(children);
+
     levels--;
 
     children.contents.forEach(function (child) {
@@ -57,12 +59,11 @@ function getSubMenus(parentContent, levels) {
  * @return {Boolean} true if the content is marked as menu item
  */
 function isMenuItem(content) {
-    var extraData = content.x;
+    var extraData = content;
     if (!extraData) {
         return false;
     }
-    var moduleNamePropertyName = app.name.replace(/\./g, '-');
-    var extraDataModule = extraData[moduleNamePropertyName];
+    var extraDataModule = extraData.data;
     if (!extraDataModule || !extraDataModule['menu-item']) {
         return false;
     }
@@ -85,7 +86,7 @@ function menuItemToJson(content, levels) {
     }
 
     var moduleNamePropertyName = app.name.replace(/\./g, '-');
-    var menuItem = content.x[moduleNamePropertyName]['menu-item'];
+    var menuItem = content.data['menu-item'];
     return {
         displayName: content.displayName,
         menuName: menuItem.menuName && menuItem.menuName.length ? menuItem.menuName : null,
