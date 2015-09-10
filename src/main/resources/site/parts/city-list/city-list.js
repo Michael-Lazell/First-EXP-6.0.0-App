@@ -1,4 +1,4 @@
-var contentSvc = require('/lib/xp/content'); // Import the content service functions
+var contentLib = require('/lib/xp/content'); // Import the content service functions
 var portal = require('/lib/xp/portal'); // Import the portal functions
 var thymeleaf = require('/lib/xp/thymeleaf'); // Import the Thymeleaf rendering function
 
@@ -14,7 +14,7 @@ exports.get = function(req) {
     var googleMaps = '<script src="http://maps.googleapis.com/maps/api/js"></script>';
 
     // Get the country content and extract the needed data from the JSON
-    var result = contentSvc.getChildren({
+    var result = contentLib.getChildren({
         key: portal.getContent()._id
     });
     var contents = result.contents;
